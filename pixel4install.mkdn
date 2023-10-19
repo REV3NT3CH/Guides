@@ -1,0 +1,13 @@
+While In Bootloader run the following in cmd prompt / terminal:
+---------------------------------------------------------------
+
+fastboot -w
+
+fastboot flash boot boot.img --slot all
+
+After booting into recovery from bootloader menu select apply updates from adb and run the following commands:
+--------------------------------------------------------------------------------------------------------------
+
+adb sideload romzipname.zip
+
+example: adb sideload AlphaDroid-13.0-20231018-coral-v1.10.zip
