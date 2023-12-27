@@ -1,0 +1,44 @@
+# Android Build Dependencies
+
+sudo apt-get install bzip2 git git-core gnupg flex imagemagick bison gperf build-essential zip curl zlib1g-dev gcc-multilib g++-multilib libbz2-dev libc6-dev-i386 libghc-bzlib-dev libffi-dev lib32ncurses-dev lib32ncurses5-dev lib32readline-dev lib32z1-dev x11proto-core-dev libx11-dev lib32z-dev ccache libgl1-mesa-dev libxml2 libxml2-utils xsltproc unzip squashfs-tools python3-mako libjpeg8-dev liblz4-tool libsdl1.2-dev libssl-dev libxml2-dev libxslt1-dev ninja-build lunzip syslinux syslinux-utils fontconfig gettext genisoimage gettext bc xorriso xmlstarlet meson glslang-tools git-lfs libncurses5 libncurses5-dev libncurses5:i386 libelf-dev libwxgtk3.0-gtk3-dev lzop optipng pngcrush python-is-python3 rsync schedtool aapt zstd rdfind nasm rustc bindgen
+
+# Create Repo path, download it and make it executable
+mkdir ~/bin && curl https://storage.googleapis.com/git-repo-downloads/repo > ~/bin/repo && chmod a+x ~/bin/repo
+
+# Now to set up paths and aliases
+
+nano ~/.bashrc
+
+export PATH=~/bin:$PATH
+export USE_CCACHE=1
+alias gimme='sudo apt-get install'
+alias update='sudo apt-get update'
+alias upgrade='sudo apt-get upgrade'
+alias dupgrade='sudo apt-get dist-upgrade'
+alias aremove='sudo apt autoremove'
+alias env='. build/envsetup.sh'
+alias sync='repo sync -f --force-sync'
+alias mc='make clobber'
+alias gcp='git cherry-pick'
+alias gcpa='git cherry-pick --abort'
+alias gcpc='git cherry-pick --continue'
+alias gcpq='git cherry-pick --quit'
+alias grh='git reset --hard'
+alias rpick='repopick -t'
+alias gg='grep -rsn'
+alias gr='git revert'
+alias gra='git remote add'
+alias grv='git remote -v'
+alias fetch='git fetch'
+alias gaa='git add -A'
+alias gcb='git checkout -b'
+alias gca='git commit -a'
+alias gcam='git commit --amend'
+alias clone='git clone'
+alias glv='git log -v'
+alias gs='git status'
+alias pull='git pull'
+alias push='git push'
+alias gpf='git push --force'
+
+source ~/.bashrc
